@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/img/logo_Plant.png" type="image/gif" />
+    <title>My Garden</title>
+  </head>
+  <body id="body-search" class="white">
+    <!-- NAVBAR -->
+    <!--<a href='https://pngtree.com/so/tree-clipart'>tree-clipart png from pngtree.com</a>-->
+    <header>
+      <nav class="z-depth-0 green darken-1">
+        <div class="nav-wrapper container">
+          <a href="index.html" class="brand-logo">
+            <img
+              src="img/logo_Plant.png"
+              style="width: 50px; margin-top: 10px;"
+            />
+          </a>
+          <a href="#" class="sidenav-trigger" data-target="slide-out">
+            <i class="material-icons">menu</i>
+          </a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li>
+              <a href="addPlant.html">Add plant</a>
+            </li>
+
+            <li class="logged-in">
+              <a href="index.html">Home</a>
+            </li>
+            <li class="logged-in" style="display: none;">
+              <a href="#" class="modal-trigger" data-target="modal-account"
+                >Account</a
+              >
+            </li>
+            <li class="logged-in" style="display: none;">
+              <a href="#" class="logout-link">Logout</a>
+            </li>
+            <li class="logged-out" style="display: none;">
+              <a href="#" class="modal-trigger" data-target="modal-login"
+                >Login</a
+              >
+            </li>
+            <li class="logged-out" style="display: none;">
+              <a href="#" class="modal-trigger" data-target="modal-signup"
+                >Sign up</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- SIDE NAV-->
+    <ul id="slide-out" class="sidenav">
+      <li class="logged-in" style="display: none;">
+        <a href="#" class="modal-trigger" data-target="modal-account"
+          >Account</a
+        >
+      </li>
+      <li>
+        <a href="addPlant.html">Add plant</a>
+      </li>
+      <li class="logged-in">
+        <a href="index.html" class="modal-trigger" data-target="modal-addPlant"
+          >Home</a
+        >
+      </li>
+      <li class="logged-in" style="display: none;">
+        <a href="#" class="logout-link">Logout</a>
+      </li>
+    </ul>
+    <main id="main-search">
+      <h5
+        id="loading-message"
+        style="text-align: center; display: none;"
+        class="container waiting-sign"
+      >
+        This process can take a few seconds, please wait...
+      </h5>
+      <!--IDENTIFY YOUR PLANT-->
+      <div class="identify-panel">
+        <form class="search-plant-form" id="search-plant-form">
+          <div id="radio-button" class="col s6">
+            <div class="leaves-flowers">LEAVES OR FLOWERS?</div>
+            <p>
+              <label for="leaf">
+                <input
+                  id="leaf"
+                  class="with-gap"
+                  name="group1"
+                  type="radio"
+                  checked
+                  value="leaf"
+                />
+                <span class="radio">leaf</span>
+              </label>
+            </p>
+            <p>
+              <label for="flower">
+                <input
+                  id="flower"
+                  class="with-gap"
+                  name="group1"
+                  type="radio"
+                  value="flower"
+                />
+                <span class="radio">flower</span>
+              </label>
+            </p>
+          </div>
+          <div class="file-field input-field col s6">
+            <a class="btn green darken-2" id="file-button-search">
+              <i class="material-icons">camera_alt</i>
+              <input id="search-plant-file" type="file" />
+            </a>
+            <div class="file-path-wrapper">
+              <input
+                class="file-path validate"
+                placeholder="Take a picture"
+                type="text"
+              />
+            </div>
+          </div>
+
+          <button
+            id="search-plant"
+            class="identify-plant btn green darken-2 z-depth-0"
+          >
+            Identify
+          </button>
+        </form>
+      </div>
+
+      <!--SEARCHED PLANT RESULT-->
+      <div id="searched-plants-result" class="container"></div>
+
+      <div id="preloader" class="container" style="display: none;">
+        <div class="preloader-wrapper big active">
+          <div class="spinner-layer spinner-green-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+              <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer-container container">
+        <div id="radio-button-footer">No copyright</div>
+        <div>Just try</div>
+      </div>
+    </footer>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-storage.js"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="scripts/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="scripts/identifyPlant.js"></script>
+    <!--    <script src="scripts/auth.js"></script> -->
+    <!--    <script src="scripts/modifyPlant.js"></script> -->
+    <!--   <script src='scripts/setUpUi.js'></script> -->
+    <script src="scripts/index.js"></script>
+  </body>
+</html>

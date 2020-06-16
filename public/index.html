@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/img/logo_Plant.png" type="image/gif" />
+    <title>My Garden</title>
+  </head>
+  <body id="body-home" class="white">
+    <!-- NAVBAR -->
+    <!--<a href='https://pngtree.com/so/flower'>flower png from pngtree.com</a>-->
+    <!--<a href='https://pngtree.com/so/seed-sprouted'>seed-sprouted png from pngtree.com</a>-->
+    <!--<a href='https://pngtree.com/so/potted'>potted png from pngtree.com</a>-->
+    <!-- <a href="https://pngtree.com/free-backgrounds">free background photos from pngtree.com</a>-->
+    <!-- <a href="https://pngtree.com/free-backgrounds">free background photos from pngtree.com</a>-->
+    <!--<a href='https://pngtree.com/so/green'>green png from pngtree.com</a>-->
+    <!--<a href='https://pngtree.com/so/apricot-flower'>apricot-flower png from pngtree.com</a>-->
+    <!--<a href='https://pngtree.com/so/tree-clipart'>tree-clipart png from pngtree.com</a>-->
+    <header>
+      <nav class="z-depth-0 green darken-1 nav">
+        <div class="nav-wrapper container">
+          <a href="#" class="brand-logo">
+            <img
+              src="img/logo_Plant.png"
+              style="width: 50px; margin-top: 5px;"
+            />
+          </a>
+          <a href="#" class="sidenav-trigger" data-target="slide-out">
+            <i class="material-icons">menu</i>
+          </a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li class="logged-in" style="display: none;">
+              <a href="addPlant.html">Add plant</a>
+            </li>
+            <li class="logged-in" style="display: none;">
+              <a href="identify.html">Identify</a>
+            </li>
+            <li class="logged-in" style="display: none;">
+              <a href="#" class="modal-trigger" data-target="modal-account"
+                >Account</a
+              >
+            </li>
+            <li class="logged-in" style="display: none;">
+              <a href="#" class="logout-link">Logout</a>
+            </li>
+
+            <li class="logged-out" style="display: none;">
+              <a href="#" class="modal-trigger" data-target="modal-login"
+                >Login</a
+              >
+            </li>
+            <li class="logged-out" style="display: none;">
+              <a href="#" class="modal-trigger" data-target="modal-signup"
+                >Sign up</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- SIDE NAV-->
+      <ul id="slide-out" class="sidenav">
+        <li class="logged-in" style="display: none;">
+          <a href="identify.html">Identify</a>
+        </li>
+        <li class="logged-in" style="display: none;">
+          <a href="addPlant.html">Add plant</a>
+        </li>
+        <li class="logged-in" style="display: none;">
+          <a href="#" class="modal-trigger" data-target="modal-account"
+            >Account</a
+          >
+        </li>
+
+        <li class="logged-in" style="display: none;">
+          <a href="#" class="logout-link">Logout</a>
+        </li>
+
+        <li class="logged-out" style="display: none;">
+          <a href="#" class="modal-trigger" data-target="modal-login">Login</a>
+        </li>
+        <li class="logged-out" style="display: none;">
+          <a href="#" class="modal-trigger" data-target="modal-signup"
+            >Sign up</a
+          >
+        </li>
+      </ul>
+    </header>
+
+    <!-- SIGN UP MODAL -->
+    <div id="modal-signup" class="modal">
+      <div class="modal-content">
+        <h4>Sign up</h4>
+        <br />
+        <form id="signup-form">
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="first-name" type="text" class="validate" />
+              <label for="first-name">First Name</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="last-name" type="text" class="validate" />
+              <label for="last-name">Last Name</label>
+            </div>
+            <div class="input-field col s12">
+              <input type="email" id="signup-email" required />
+              <label for="signup-email">Email address</label>
+            </div>
+            <div class="input-field col s12">
+              <input type="password" id="signup-password" required />
+              <label for="signup-password">Choose password</label>
+            </div>
+            <div class="center-align">
+              <button class="btn green darken-2 z-depth-0 signup-button">
+                Sign up
+              </button>
+            </div>
+            <p id="error-signup" class="center-align"></p>
+          </div>
+        </form>
+        <div class="separator">OR</div>
+        <div id="googleButtonWrapper">
+          <button id="signin-google" class="btn">
+            Sign in with Google<i class="material-icons left">email</i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOGIN MODAL -->
+    <div id="modal-login" class="modal">
+      <div class="modal-content">
+        <h4>Login</h4>
+        <br />
+        <form id="login-form">
+          <div class="input-field">
+            <input type="email" id="login-email" required />
+            <label for="login-email">Email address</label>
+          </div>
+          <div class="input-field">
+            <input type="password" id="login-password" required />
+            <label for="login-password">Your password</label>
+          </div>
+          <button class="btn green darken-2 z-depth-0 login-button">
+            Login
+          </button>
+          <p id="error-login" class="center-align"></p>
+        </form>
+      </div>
+    </div>
+
+    <!-- ACCOUNT MODAL -->
+    <div id="modal-account" class="modal">
+      <div class="modal-content center-align">
+        <h4>Account details</h4>
+        <br />
+        <div class="account-details"></div>
+      </div>
+    </div>
+    <!-- DELETE PLANT MODAL -->
+    <div id="modal-delete" class="modal">
+      <div class="modal-content center-align">
+        <h4>Are you sure you want to delete?</h4>
+        <p>Really, really sure</p>
+        <button id="delete-confirm" class="btn-flat yes-delete modal-close">
+          Yes
+        </button>
+        <button
+          id="delete-cancel"
+          class="modal-close btn-flat waves-effect waves-light green no-delete"
+        >
+          No
+        </button>
+      </div>
+    </div>
+
+    <!-- MODIFY PLANT MODAL -->
+
+    <div id="modal-modifyPlant" class="modal modify-modal">
+      <div id="modal-content-id" class="modal-content">
+        <h4>Modify a plant from your collection</h4>
+        <br />
+        <form class="col s12 m12" id="plant-form-modify">
+          <div class="row modify-row">
+            <div class="input-field col s12 m6">
+              <input
+                placeholder="plant name"
+                type="text"
+                id="plantName-modify"
+                required
+              />
+              <label id="plantName-modifyLabel" for="plantName-modify"></label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input
+                placeholder="plant type"
+                type="text"
+                id="plantType-modify"
+                required
+              />
+              <label id="plantType-modifyLabel" for="plantType-modify"></label>
+            </div>
+          </div>
+          <div class="row modify-row">
+            <div class="input-field col s12 m6">
+              <input
+                placeholder="plant fertilizing period"
+                class="validate"
+                type="number"
+                id="fertilizingPeriod-modify"
+                required
+              />
+              <label
+                id="fertilizingPeriod-modifyLabel"
+                for="fertilizingPeriod-modify"
+              ></label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input
+                placeholder="plant watering period"
+                class="validate"
+                type="number"
+                id="wateringPeriod-modify"
+                required
+              />
+              <label
+                id="wateringPeriod-modifyLabel"
+                for="wateringPeriod-modify"
+              ></label>
+            </div>
+          </div>
+          <div class="row modify-row">
+            <div class="input-field col s12 m6">
+              <input
+                placeholder="plant last watering"
+                type="text"
+                id="datepickerWater-modify"
+                class="datepicker"
+              />
+              <label
+                id="datepickerWater-modifyLabel"
+                for="datepickerWater-modify"
+              ></label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input
+                placeholder="plant last fertilizing"
+                type="text"
+                id="datepickerFertilizer-modify"
+                class="datepicker"
+              />
+              <label
+                id="datepickerFertilizer-modifyLabel"
+                for="datepickerFertilizer-modify"
+              ></label>
+            </div>
+          </div>
+          <div class="row modify-row">
+            <div class="file-field input-field col s12 m6">
+              <div class="btn green darken-2" id="fileButton-modify">
+                <span>File</span>
+                <input type="file" id="input-modify-photoURL" />
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" />
+              </div>
+            </div>
+            <div class="col s12">
+              <progress class="uploader" value="0" max="100" id="uploader"
+                >0%</progress
+              >
+            </div>
+            <div class="col s12 m12 buttons-modify">
+              <button
+                id="accept-button"
+                class="accept-modify btn green darken-2 z-depth-0 accept"
+              >
+                Accept
+              </button>
+              <button
+                type="button"
+                class="cancel-button modal-close btn red darken-2 z-depth-0"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <main id="main-home">
+      <!-- Plant LIST -->
+      <div class="login-presentation hero logged-out" style="display: none;">
+        <img
+          class="hero-img"
+          src="img/Water_Garden.jpg"
+          style="position: absolute;"
+        />
+        <div class="hero-content">
+          <h3 class="login-text">
+            Enter your Garden
+          </h3>
+          <h4>
+            Login to discover plants and tralalá la la
+          </h4>
+          <button data-target="modal-login" class="button-login modal-trigger">
+            <span>Login</span>
+          </button>
+        </div>
+      </div>
+      <h4 id="your-garden" class="your-garden">
+        YOUR GARDEN
+      </h4>
+      <div class="plants card-small"></div>
+    </main>
+    <footer></footer>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-storage.js"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="scripts/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="lib/moment/moment.min.js"></script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/uploadPhoto.js"></script>
+    <script src="scripts/modifyPlant.js"></script>
+    <script src="scripts/onAuthStateChanged.js"></script>
+    <script src="scripts/deletePlant.js"></script>
+    <script src="scripts/setupPlants.js"></script>
+    <script src="scripts/index.js"></script>
+  </body>
+</html>

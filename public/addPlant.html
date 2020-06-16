@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/img/logo_Plant.png"" type="image/gif" />
+    <title>My Garden</title>
+  </head>
+  <body id="body-addPlant" class="white">
+    <!-- NAVBAR -->
+    <!--<a href='https://pngtree.com/so/green'>green png from pngtree.com</a>-->
+    <!--<a href='https://pngtree.com/so/apricot-flower'>apricot-flower png from pngtree.com</a>-->
+    <!--<a href='https://pngtree.com/so/tree-clipart'>tree-clipart png from pngtree.com</a>-->
+    <header>
+      <nav class="z-depth-0 green darken-1">
+        <div class="nav-wrapper container">
+          <a href="index.html" class="brand-logo">
+            <img
+              src="img/logo_Plant.png"
+              style="width: 50px; margin-top: 10px;"
+            />
+          </a>
+          <a href="#" class="sidenav-trigger" data-target="slide-out">
+            <i class="material-icons">menu</i>
+          </a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li class="logged-in" style="display: none;">
+              <a href="identify.html">Identify</a>
+            </li>
+
+            <li class="logged-in">
+              <a href="index.html">Home</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- SIDE NAV-->
+      <ul id="slide-out" class="sidenav">
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li class="logged-in" style="display: none;">
+          <a href="#" class="logout-link">Logout</a>
+        </li>
+
+        <li class="logged-out" style="display: none;">
+          <a href="#" class="modal-trigger" data-target="modal-login">Login</a>
+        </li>
+        <li class="logged-out" style="display: none;">
+          <a href="#" class="modal-trigger" data-target="modal-signup"
+            >Sign up</a
+          >
+        </li>
+      </ul>
+    </header>
+
+    <!--ADD PLANT FORM-->
+    <div class="row">
+      <div class="container">
+        <form class="col s12" id="plant-form">
+          <div class="row">
+            <div class="input-field col s6">
+              <input type="text" id="plantName" required />
+              <label for="plantName">Plant name</label>
+            </div>
+            <div class="input-field col s6">
+              <input type="text" id="plantType" required />
+              <label for="plantType">Plant type</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input
+                class="validate"
+                type="number"
+                id="fertilizingPeriod"
+                required
+              />
+              <label for="fertilizingPeriod">Fertilizing Period in days</label>
+            </div>
+            <div class="input-field col s6">
+              <input
+                class="validate"
+                type="number"
+                id="wateringPeriod"
+                required
+              />
+              <label for="wateringPeriod">Watering Period in days</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input type="text" id="datepickerWater" class="datepicker" />
+              <label for="datepickerWater">Last watering</label>
+            </div>
+            <div class="input-field col s6">
+              <input type="text" id="datepickerFertilizer" class="datepicker" />
+              <label for="datepickerFertilizer">Last Fertilizing</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="file-field input-field col s6">
+              <div class="btn green darken-2" id="fileButton">
+                <span>File</span>
+                <input type="file" />
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text" />
+              </div>
+            </div>
+            <div>
+              <progress
+                class="uploader-addPlant"
+                value="0"
+                max="100"
+                id="uploader"
+                >0%</progress
+              >
+            </div>
+          </div>
+          <hr />
+          <div class="buttons-addPlant">
+            <a href="index.html">
+              <button class="create-plant btn green darken-2 z-depth-0">
+                Create
+              </button>
+            </a>
+            <a href="index.html">
+              <button
+                type="button"
+                class="cancel-create-plant btn red darken-2 z-depth-0"
+              >
+                Cancel
+              </button>
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-storage.js"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="scripts/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- <script src="scripts/identifyPlant.js"></script> -->
+    <script src="lib/moment/moment.min.js"></script>
+    <!--    <script src="scripts/auth.js"></script> -->
+    <!-- <script src="scripts/modifyPlant.js"></script> -->
+    <!-- <script src="scripts/setUpUi.js"></script> -->
+    <script src="scripts/uploadPhoto.js"></script>
+    <script src="scripts/addPlant.js"></script>
+    <script src="scripts/index.js"></script>
+  </body>
+</html>
