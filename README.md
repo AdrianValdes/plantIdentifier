@@ -33,13 +33,13 @@ firebase deploy
 And follow the comandline instructions
 ## Built With
 
-* [Firebase](https://firebase.google.com/) - The Database client
+* [Firebase](https://firebase.google.com/) - Database client
 * [MaterializeCSS](https://materializecss.com/) - UI Library
 
 
 ## Author
 
-* **Adrian Valdés** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Adrian Valdés** 
 
 ## License
 
