@@ -1,4 +1,4 @@
-The project is deployed at https://plantproject-2df69.web.app/
+
 # Arboreous
 
 This is a simple project to keep track of your plants water schedule. In addition you can identify plants that may be unknown to you.
@@ -7,6 +7,7 @@ This is a simple project to keep track of your plants water schedule. In additio
 
 In order to use this project you have to update the firebaseConfig object inside firebase.js with your own keys.
 
+The project is deployed at https://plantproject-2df69.web.app/
 ### Prerequisites
 You need a firebase account to use your own keys in the firebase.js file
 
