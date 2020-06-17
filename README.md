@@ -1,7 +1,8 @@
 
 # Arboreous
 
-This is a simple project that uses moment.js to keep track of your plants water schedule. In addition you can identify plants by taking a picture.
+This is a simple project that uses moment.js to keep track of your plants water schedule. In addition you can identify plants by taking pictures of them through the https://my.plantnet.org/ API.
+The projetc uses Firebase to handle Authentication, Storage, Database services, and Hosting.
 
 ## Getting Started
 
